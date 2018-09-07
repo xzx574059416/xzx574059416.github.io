@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>个人简历</title>
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/animate.css">
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/lanren.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/superslide.2.1.js"></script>
+</head>
+	<style>
+		.bg{background-color: #00f;height: 580px;width: 100%;position: relative;background-image: url(./image/dzw.png);overflow: hidden;/*opacity:0.7;*/}
+		.bg1{/*background-size: 100%;*/display: none;}
+		.row{display: none;}
+		#heng{position: absolute;top: 50%;width: 100%;height: 30px;margin-top: -15px;background-color: #ff0;}
+		#shu{position: absolute;left: 50%;width: 30px;height: 100%;margin-left: -15px;background-color: #ff0;}
+		#zuo1{position: absolute;top: 23%;left: 50%;width: 130px;height: 180px;border: 30px solid #ff0;margin-left: -150px;border-radius: 100% 100% 100% 100%/70% 70% 130% 130%;transform: rotate(-60deg);}
+		#you1{position: absolute;top: 23%;left: 50%;width: 130px;height: 180px;border: 30px solid #ff0;margin-left: 20px;border-radius: 100% 100% 100% 100%/70% 70% 130% 130%;/*border-bottom: none;*/transform: rotate(60deg);}
+		#zuo2{position: absolute;top: 47.4%;left: 50%;width: 120px;height: 130px;border: 30px solid #ff0;margin-left: 15px;border-radius: 0 100% 100% 0/50% 70% 0 0;border-left: none;border-bottom: none;}
+		#you2{position: absolute;top: 47.4%;left: 50%;width: 120px;height: 130px;border: 30px solid #ff0;margin-left: -135px;border-radius: 100% 0 100% 0/70% 50% 0 0;border-right: none;border-bottom: none;}
+		#circle{line-height: 400px;width: 400px;background-color: #000;opacity: 0.3;position: absolute;left: 50%;top: 50%;margin: -200px;border-radius: 400px;text-align: center;color: #fff;font-size: 64px;}
+		#circle:hover{cursor: pointer;}
+		#circle2{background-image: url(./image/bgi2.jpg);position: absolute;left: 50%;top: 50%;border-radius: 2000px;}
+		#people{background-image: url(./image/people.jpg);position: absolute;height: 160px;width: 160px;border-radius: 160px;left: 50%;top: 50%;margin-left: -300px;margin-top: -80px;border: 3px solid black;display: none;}
+		.characters {position: absolute;top: 50%;left: 50%;margin-top: -320px;margin-left: -195px;}
+		.characters > span {display: inline-block;width: 80px;height: 100px;font: 500 60px/80px "Microsoft YaHei";text-align: center;position: relative;transform-style: preserve-3d;}
+		.characters > span::before, .characters > span::after {content: attr(data-cont);position: absolute;top: 50%;left: 50%;/*width: 100%;*/ /*height: 100%;*/color: white;transform-origin: left;transform: scale(0.96, 1);ransition: all 1s;}
+        .characters > span::before {color: #333;}
+        .characters:hover span::after {transform: rotateY(-35deg);}
+        .characters:hover span::before {/*倾斜*/transform: rotateY(-15deg) skewY(15deg);}
+        /*导航*/
+        .nav {width: 550px;margin: 50px auto;position: absolute;top:50%;left: 50%;line-height: 30px;transform-origin: bottom;display: none;}
+        ul {list-style: none;}
+        .li1 {float: left;transform-style: preserve-3d;position: relative;width: 240px;transition: all 0.8s;} 
+        .li1 > span {position: absolute;width: 100%;height: 100%;top: 50%;left: 50%;/*text-align: center;*/font: 48px/0px "Microsoft YaHei";}
+        .li1 > span:nth-child(1) {color: #fff;transform: translateZ(15px);}
+        .li1:hover{transform: rotateY(-15deg);cursor: pointer;text-shadow: 6px 6px 10px #111;}
+		/*p{font-size: 36px;position: absolute;top:50%;left: 50%;display: none;color: #fff;}
+		p:hover{cursor: pointer;}*/
+		.circle{background-image: url(./image/bgi2.jpg);position: absolute;left: 50%;top: 50%;border-radius: 2000px;}
+		.d1{position: absolute;top: 50%;left: 50%;width: 225px;height: 300px;margin-left: -490px;margin-top: -260px;text-align: center;display: none;background-image: url(./image/nl.jpg);overflow: hidden;color: #fff;}
+		#d6-2{position: absolute;left: 0px;background-color: #d87b96;}
+		#d6-3{position: absolute;left: 245px;background-color: #6d96b1;}
+		#d6-4{position: absolute;left: 490px;background-color: #6abbb2;}
+		#d6-5{position: absolute;left: 735px;background-color: #508d92;}
+		#d6-6{position: absolute;left: 980px;background-color: #efa671;}
+		#box6 h2{text-align: center;color: #fff;margin-top: 50px;font-weight: 400;}
+		#box6 h1{text-align: center;color: #fff;font-size: 28px;font-weight: 400;font-family: "黑体";}
+		.return{position: absolute;top:100%;left:100%;margin-top: 100px;width: 80px;background: #444;opacity: 0.5;border-radius: 10px;text-align: center;line-height: 40px;color: #999;font-size: 30px;border: 1px solid #222;display: none;z-index: 10;}
+		.return:hover{color: #fff;}
+		.lanren{display: none;}
+		.book{display: none;}
+		.p2{font-size: 24px;line-height: 32px;}
+	</style>
+	<style type="text/css">		
+	*{margin:0;padding:0;list-style:none;}
+	body{background:#fff;font:normal 12px/22px 宋体;width:100%;}
+	img{border:0;}
+	.a{text-decoration:none;color:#333;}
+	.a:hover{color:#1974A1;}
+	/* fullSlide */
+	.fullSlide{width:100%;position:relative;height:410px;background:#000;display: none;position: absolute;top:50%;margin-top: -205px;opacity: 0.5}
+	.fullSlide .bd{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
+	.fullSlide .bd ul{width:100% !important;}
+	.fullSlide .bd li{width:100% !important;height:410px;overflow:hidden;text-align:center;border-bottom: 10px solid #000;border-left: 10px solid #000}
+	.fullSlide .bd li a{display:block;height:410px;}
+	.fullSlide .hd{width:100%;position:absolute;left:50%;margin-left:-60px;z-index:1;bottom:0;height:30px;line-height:30px;}
+	.fullSlide .hd ul li{cursor:pointer;display:inline-block;*display:inline;zoom:1;width:42px;height:11px;margin:1px;overflow:hidden;background:#000;filter:alpha(opacity=50);opacity:0.5;line-height:999px;}
+	.fullSlide .hd ul .on{background:#f00;}
+	.fullSlide .prev,.fullSlide .next{display:block;position:absolute;z-index:1;top:50%;margin-top:-30px;left:15%;z-index:1;width:40px;height:60px;background:url(image/slider-arrow.png) -126px -137px #000 no-repeat;cursor:pointer;filter:alpha(opacity=50);opacity:0.5;display:none;position: absolute;top: 50%;}
+	.fullSlide .next{left:auto;right:15%;background-position:-6px -137px;}
+	</style>
+<body>
+	<!-- 整体背景 -->
+	<div class="bg">
+		<div class="lwh">
+			<div class="characters">
+			    <span data-cont="个"></span>
+			    <span data-cont="人"></span>
+			    <span data-cont="简"></span>
+			    <span data-cont="历"></span>
+			</div>
+			<div id="heng"></div>
+			<div id="shu"></div>
+			<div id="zuo1"></div>
+			<div id="you1"></div>
+			<div class="xian2" id="zuo2"></div>
+			<div class="xian2" id="you2"></div>
+			<div id="circle">Click</div>
+		</div>
+		<div id="circle2">
+		<div id="people"></div>
+			<!-- <p id="sy" style="margin-top:-200px">首页</p>
+			<p id="nl" style="margin-top:-100px">能力</p>
+			<p id="jj" style="margin-top:0px">简介</p>
+			<p id="phone" style="margin-top:100px">联系方式</p> -->
+		<div id="circle3" class="circle"></div>
+		<div id="circle4" class="circle"></div>
+		<div id="circle5" class="circle"></div>
+		<div id="circle6" class="circle"></div>
+		<div class="nav">
+		    <ul id="ul1">
+		        <li class="li1" id="li1" style="margin-top:-200px;margin-left:-100px">
+		            <span>首页</span>
+		        </li>
+		        <li class="li1" id="li2" style="margin-top:-100px;margin-left:-100px">
+		            <span>能力</span>
+		        </li>
+		        <li class="li1" id="li3" style="margin-top:0px;margin-left:-100px">
+		            <span>简介</span>
+		        </li>
+		        <li class="li1" id="li4" style="margin-top:100px;margin-left:-245px">
+		            <span>联系方式</span>
+		        </li>
+
+
+
+
+		        
+		    </ul> 
+		    <div class="d1" id="d6-2">
+				<h2>JAVASE</h2>
+				<h1>★★★☆☆               ☆☆☆☆☆</h1>
+			</div>
+			<div class="d1" id="d6-3">
+				<h2>CSS</h2>
+				<h1>★★★☆☆               ☆☆☆☆☆</h1>
+			</div>
+			<div class="d1" id="d6-4">
+				<h2>JS</h2>
+				<h1>★★☆☆☆               ☆☆☆☆☆</h1>
+			</div>
+			<div class="d1" id="d6-5">
+				<h2>Bootstrap</h2>
+				<h1>★★☆☆☆               ☆☆☆☆☆</h1>
+			</div>
+			<div class="return">返回</div>
+		    </div>
+		</div>
+		<!--fullSlide-->
+		<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<li _src="url(image/1.jpg)" style="background:#E2025E center 0 no-repeat;"><a class="a" href="#"></a></li>
+				<li _src="url(image/2.jpg)" style="background:#DED5A1 center 0 no-repeat;"><a class="a" href="#"></a></li>
+				<li _src="url(image/3.jpg)" style="background:#B8CED1 center 0 no-repeat;"><a class="a" href="#"></a></li>
+					
+			</ul>
+			</div>
+			<div class="hd"><ul></ul></div>
+			<span class="prev"></span>
+			<span class="next"></span>
+		</div>
+		<!-- 顶部导航 -->
+		<ul class="menu" style="width:100%;opacity:0.8;height:44px;overflow: hidden;display:none;">
+			<li class="home current" style="position:absolute;left:50%;margin-left:-400px;">
+				<a href="">
+					<span>首页</span>
+					<span>首页</span>
+					<span>首页</span>
+					<span>首页</span>
+				</a>
+			</li>
+			<li class="about" style="position:absolute;left:50%;margin-left:-200px">
+				<a href="">
+					<span>能力</span>
+					<span>能力</span>
+					<span>能力</span>
+					<span>能力</span>
+				</a>
+			</li>
+			<li class="contact" style="position:absolute;left:50%;margin-left:0px;width:140px">
+				<a href="">
+					<span>简介</span>
+					<span>简介</span>
+					<span>简介</span>
+					<span>简介</span>
+				</a>
+			</li>
+			<li class="twitter" style="position:absolute;left:50%;margin-left:200px;">
+				<a href="">
+					<span>联系方式</span>
+					<span>联系方式</span>
+					<span>联系方式</span>
+					<span>联系方式</span>
+				</a>
+			</li>
+		</ul>
+		<!-- 简介 -->
+		<div class="lanren">
+		<div class="full-length">
+		    <div class="container">
+			<h2><span>简介</span></h2>
+		    	<ul>
+		        	<li>
+		            	<div class="port-5 effect-1">
+		                	<div class="image-box">
+		                    	<img src="image\img-1.jpg" alt="Image-1">
+		                    </div>
+		                    <div class="text-desc">
+		                    	<h3>学历</h3>
+		                        <p>好好学习，天天向上</p>
+		                    	<a href="#" class="btn">education</a>
+		                    </div>
+		                </div>
+		            </li>
+		            <li>
+		            	<div class="port-5 effect-2">
+		                	<div class="image-box">
+		                    	<img src="image\img-1.jpg" alt="Image-2">
+		                    </div>
+		                    <div class="text-desc">
+		                    	<h3>家庭</h3>
+		                        <p>开开心心，快快乐乐</p>
+		                    	<a href="#" class="btn">family</a>
+		                    </div>
+		                </div>
+			        </li>
+			            <li>
+			            	<div class="port-5 effect-3">
+			                	<div class="image-box">
+			                    	<img src="image\img-1.jpg" alt="Image-3">
+			                    </div>
+			                    <div class="text-desc">
+			                    	<h3>性格</h3>
+			                        <p>爱岗敬业，热爱和平</p>
+			                    	<a href="#" class="btn">nature</a>
+			                    </div>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+			</div>
+		</div>
+		<div class="book preserve-3d">
+		<!-- 书的最后一页 -->
+			<div class="book-page-box book-page-4 preserve-3d">
+				<div class="book-page page-front">
+					<p class="p2">联系电话       15059550558</p>
+				</div>
+			</div>
+			<!-- 书的第三页 -->
+			<div class="book-page-box book-page-3 preserve-3d flip-animation-3">
+				<div class="book-page page-front">
+					<p class="p2">电子邮箱       574059416@qq.com</p>
+				</div>
+			</div>
+			<!-- 书的第二页 -->
+			<div class="book-page-box book-page-2 preserve-3d flip-animation-2">
+				<div class="book-page page-front">
+					<p class="p2">姓名      许志鑫</p>
+				</div>
+			</div>
+			<!-- 书的封面 -->
+			<div class="book-page-box book-page-1 preserve-3d flip-animation-1">
+				<div class="book-page page-front">
+					<p class="p2">
+						联系方式
+						<br>
+						contact way
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row" tyle="height:100px;background-image:url(./image/bgi.jpg);background-repeat: no-repeat">
+			<div class="col-md-2 col-md-offset-1" style="background-image:url(./image/shouye.jpg);background-repeat: no-repeat;line-height:87px;width:70px;text-align:center;font-size:18px">
+				首页
+			</div>
+			<div class="col-md-2 col-md-offset-1" style="background-image:url(./image/nengli.jpg);background-repeat: no-repeat;line-height:52px;width:75px;text-align:center;font-size:14px;margin-top:10px;transform:rotate(-15deg)">
+	        	能力
+	    	</div>
+			<div class="col-md-2 col-md-offset-1" style="background-image:url(./image/nengli.jpg);background-repeat: no-repeat;line-height:52px;width:75px;text-align:center;font-size:14px;margin-top:10px;transform:rotate(6deg)">
+	        	简介
+	    	</div>
+			<div class="col-md-2 col-md-offset-1" style="background-image:url(./image/lxfs.jpg);background-repeat: no-repeat;line-height:52px;width:90px;text-align:center;font-size:14px;margin-top:10px;transform:rotate(-3deg)">
+	        	联系方式
+	    	</div>
+		</div> -->
+	</div>
+	<script type="text/javascript">
+	$(".fullSlide").hover(function(){
+	    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+	},
+	function(){
+	    $(this).find(".prev,.next").fadeOut()
+	});
+	$(".fullSlide").slide({
+	    titCell: ".hd ul",
+	    mainCell: ".bd ul",
+	    effect: "fold",
+	    autoPlay: true,
+	    autoPage: true,
+	    trigger: "click",
+	    startFun: function(i) {
+	        var curLi = jQuery(".fullSlide .bd li").eq(i);
+	        if ( !! curLi.attr("_src")) {
+	            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+	        }
+	    }
+	});
+	</script>
+	<script>
+		$("#circle").click(function(){
+			$("#circle").css("display","none");
+			$("#you2").animate({
+				height:"0px",
+				marginLeft:"0px"
+			},1000);
+			$("#zuo2").animate({
+				height:"0px",
+				marginLeft:"-130px"
+			},1000);
+			$("#circle2").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("#circle2").on("mouseover",function(){
+			$(".menu").css("display","block");
+			$("#people").css("display","block");
+			$(".nav").css("display","block");
+		})
+		$("#li1").on("click",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle6").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle6").css("display","block");
+			$("#circle6").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$(".home").on("mouseover",function(){
+			$(".book").css("display","none");
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle6").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle6").css("display","block");
+			$("#circle6").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("#li2").on("click",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle3").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle3").css("display","block");
+			$("#circle3").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$(".aboue").on("mouseover",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle3").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle3").css("display","block");
+			$("#circle3").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("#li3").on("click",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle4").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle4").css("display","block");
+			$("#circle4").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("contact").on("mouseover",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle4").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle4").css("display","block");
+			$("#circle4").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("#li4").on("click",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle5").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle5").css("display","block");
+			$("#circle5").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$(".twitter").on("mouseover",function(){
+			$("#people").css("display","none");
+			$("#ul1").css("display","none");
+			$("#circle5").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle5").css("display","block");
+			$("#circle5").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+		$("#circle6").on("mouseover",function(){
+			$(".lwh").css("display","none");
+			$(".bg").css({
+				backgroundColor: "#334",
+				backgroundImage: "url()",
+			})
+			$(".fullSlide").css("display","block");
+			$(".return").css("display","block");
+		})
+		$("#circle3").on("mouseover",function(){
+			$(".lwh").css("display","none");
+			$(".bg").css({
+				backgroundColor: "#334",
+				backgroundImage: "url()",
+			})
+			$(".d1").css("display","block");
+			$(".return").css("display","block");
+		})
+		$("#circle4").on("mouseover",function(){
+			$(".lwh").css("display","none");
+			$(".bg").css({
+				backgroundColor: "#334",
+				backgroundImage: "url()",
+			})
+			$(".lanren").css("display","block");
+			$(".return").css("display","block");
+		})
+		$("#circle5").on("mouseover",function(){
+			$(".lwh").css("display","none");
+			$(".bg").css({
+				backgroundColor: "#334",
+				backgroundImage: "url()",
+			})
+			$(".book").css("display","block");
+			$(".return").css("display","block");
+		})
+		$(".return").on("click",function(){
+			$("#circle3").css("display","none");
+			$("#circle4").css("display","none");
+			$("#circle5").css("display","none");
+			$("#circle6").css("display","none");
+			$(".d1").css("display","none");
+			$(".fullSlide").css("display","none");
+			$(".return").css("display","none");
+			$(".lanren").css("display","none");
+			$(".book").css("display","none");
+			$("#ul1").css("display","block");
+			$("#circle2").css({
+				width: "0",
+				height: "0",
+				margin: "0"
+			})
+			$("#circle2").animate({
+				width:"2000px",
+				height:"2000px",
+				margin:"-1000px"
+			},3000);
+		})
+	</script>
+</body>
+</html>
